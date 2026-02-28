@@ -1,0 +1,18 @@
+{
+  "ticket": {
+    "ticket_id": "e57ea6ab-dfeb-4319-b82f-e9ca57d44a43",
+    "created_at": "2026-02-28T20:17:23.547100+05:30",
+    "area_name": "Open Waste Dump",
+    "lat": 0.0,
+    "lng": 0.0,
+    "waste_type": "MIXED",
+    "volume_level": "HIGH",
+    "estimated_weight_kg": 1000.0,
+    "priority": "P0",
+    "near_sensitive_zone": true,
+    "action": "DISPATCH_NOW",
+    "vehicle_type": "COMPACTOR",
+    "requires_after_photo": true,
+    "wall_time_seconds": 7.3762
+  }
+}
