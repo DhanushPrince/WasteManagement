@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.leaflet-container {
+  background: #e8eaf0;
+}
+
+.leaflet-pane {
+  z-index: 10 !important;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 20 !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ── Route Badge ── */
+.route-badge {
+  background: white;
+  border: 2.5px solid #2563eb;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  color: #1e3a8a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* ── Rapido-style Pin Markers ── */
+.pin-marker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.35));
+  animation: pin-drop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes pin-drop {
+  0% {
+    transform: translateY(-30px) scale(0.6);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateY(2px) scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pin-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Pin label (START / END) */
+.pin-label {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.pin-start .pin-label {
+  color: #15803d;
+  border: 1.5px solid #86efac;
+}
+
+.pin-end .pin-label {
+  color: #b91c1c;
+  border: 1.5px solid #fca5a5;
+}
+
+/* Teardrop pin body */
+.pin-body {
+  width: 32px;
+  height: 32px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.pin-start .pin-body {
+  background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+  border: 2px solid #bbf7d0;
+}
+
+.pin-end .pin-body {
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  border: 2px solid #fecaca;
+}
+
+.pin-body .pin-icon {
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pulsing ring at the bottom tip of the pin */
+.pin-pulse-ring {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: -3px;
+  animation: pin-pulse 2s ease-in-out infinite;
+}
+
+.pin-start .pin-pulse-ring {
+  background: #22c55e;
+}
+
+.pin-end .pin-pulse-ring {
+  background: #ef4444;
+}
+
+/* Shadow dot under the pin */
+.pin-shadow {
+  width: 10px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  margin-top: 1px;
+  filter: blur(1px);
+}
