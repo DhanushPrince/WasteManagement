@@ -1,0 +1,4 @@
+sonar \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=sqp_4a62834ed09c9aa4898d9e02674745fa690da95b \
+  -Dsonar.projectKey=test-1
